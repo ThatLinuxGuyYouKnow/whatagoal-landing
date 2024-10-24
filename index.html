@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhataGoal - Football Stats Assistant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .soccer-ball {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            background: radial-gradient(circle at 65% 15%, white 1px, #222222 3%, #222222 60%, white 100%);
+            border-radius: 50%;
+            animation: move 20s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes move {
+            0% { transform: translate(-100px, 0) rotate(0deg); }
+            100% { transform: translate(calc(100vw + 100px), 100vh) rotate(360deg); }
+        }
+
+        .background-accent {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .accent-1 {
+            width: 300px;
+            height: 300px;
+            background: #4834d4;
+            top: -100px;
+            right: -100px;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .accent-2 {
+            width: 400px;
+            height: 400px;
+            background: #686de0;
+            bottom: -150px;
+            left: -150px;
+            animation: pulse 8s ease-in-out infinite;
+            animation-delay: -4s;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(104, 109, 224, 0.2);
+            box-shadow: 0 4px 6px rgba(72, 52, 212, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .platform-badge {
+            background: rgba(104, 109, 224, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(104, 109, 224, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 0 10px;
+            color: #4834d4;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            text-align: center; /* Ensure content inside is centered */
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #4834d4, #686de0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-title {
+            color: #4834d4;
+        }
+
+        .card-text {
+            color: #2c3e50;
+        }
+
+        .btn-custom {
+            background: linear-gradient(135deg, #4834d4, #686de0);
+            border: none;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(72, 52, 212, 0.3);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-accent accent-1"></div>
+    <div class="background-accent accent-2"></div>
+
+    <!-- Soccer Balls with increased number -->
+    <div class="soccer-ball"></div>
+    <div class="soccer-ball" style="animation-delay: -5s;"></div>
+    <div class="soccer-ball" style="animation-delay: -10s;"></div>
+    <div class="soccer-ball" style="animation-delay: -15s;"></div>
+    <div class="soccer-ball" style="animation-delay: -20s;"></div>
+    <div class="soccer-ball" style="animation-delay: -25s;"></div>
+    <div class="soccer-ball" style="animation-delay: -30s;"></div>
+
+    <div class="container pt-5 content-wrapper">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1 class="display-2 mb-4 floating gradient-text">
+                    ⚽ WhataGoal
+                </h1>
+                <p class="lead text-dark mb-5">Your AI-powered football statistics assistant. Get instant insights, predictions, and analysis.</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-auto">
+                <span class="platform-badge">
+                    <i class="fas fa-globe"></i> Web Platform
+                </span>
+            </div>
+            <div class="col-auto">
+                <span class="platform-badge">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Assistant
+                </span>
+            </div>
+        </div>
+
+        <div class="row justify-content-center g-4">
+            <div class="col-md-4">
+                <div class="card stat-card h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Live Stats</h3>
+                        <p class="card-text">Real-time match statistics, player performance, and team analytics</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Predictions</h3>
+                        <p class="card-text">AI-powered match predictions and performance forecasts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Historical Data</h3>
+                        <p class="card-text">Comprehensive database of past matches, player stats, and team records</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col text-center">
+                <button class="btn btn-custom btn-lg px-5 floating">Get Started</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+</body>
+</html>
+
