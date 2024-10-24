@@ -9,6 +9,71 @@
         body {
             background: #ffffff;
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 75vh;
+            }
+        }
+
+        .league-scroller {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            justify-content: center;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .league-scroller img {
+            height: 100px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .league-logo {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .league-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .display-1 {
+            font-size: 4.5rem;
+        }
+
+        .platform-badge {
+            font-size: 1.5rem;
+            padding: 12px 24px;
+            background: rgba(104, 109, 224, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(104, 109, 224, 0.2);
+            border-radius: 20px;
+            color: #4834d4;
+            position: relative;
+            z-index: 1;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .feature-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
         }
 
         .floating {
@@ -71,92 +136,41 @@
 
         .stat-card {
             background: rgba(255, 255, 255, 0.1) !important;
-            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(104, 109, 224, 0.8);
             box-shadow: 0 4px 6px rgba(72, 52, 212, 0.4);
             transition: all 0.3s ease;
             position: relative;
             z-index: 1;
-            min-height: 150px; /* Instead of fixed height */
+            min-height: 150px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .stat-card .card-body {
-            width: 100%;
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 1.6rem;
+            line-height: 1.6;
         }
 
-        .stat-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1) !important;
+        .feature-list li {
+            padding-left: 0;
+            position: relative;
+            margin-bottom: 0.5rem;
+            font-family: inherit;
+            display: inline-block;
+            text-align: left;
         }
 
-        /* Mobile-specific adjustments */
-        @media (max-width: 768px) {
-            .stat-card {
-                margin-bottom: 20px;
-            }
-        }
-        @media (min-width: 769px) {
-    .stat-card {
-        min-height: 300px;
-    }
-}
-.feature-list {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 1rem;
-    text-align: left;
-    font-size: 1rem; /* Ensure font consistency */
-    line-height: 1.6; /* Add line height for readability */
-}
-
-.feature-list li {
-    padding-left: 1.5rem; /* Add padding to align text with icons */
-    position: relative;
-    margin-bottom: 0.5rem; /* Add space between items */
-    font-family: inherit; /* Ensure it inherits the font-family */
-}
-
-.feature-list li:before {
-    content: "⚽";
-    position: absolute;
-    left: 0;
-    top: 0.1rem; /* Adjust vertical alignment */
-    font-size: 1rem; /* Ensure icon is same size as text */
-    color: #4834d4; /* Match the color with the rest of the theme */
-}
-
- .platform-badge {
-            background: rgba(104, 109, 224, 0.1);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(104, 109, 224, 0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            margin: 0 10px;
+        .feature-list li:before {
+            content: "⚽";
+            margin-right: 0.5rem;
+            font-size: 1rem;
             color: #4834d4;
-            position: relative;
-            z-index: 1;
-            margin: 10px;
-    display: inline-block;
-        }
-@media (max-width: 768px) {
-    .col-auto {
-        width: 80%;
-        margin-bottom: 10px;
-    }
-    
-    .platform-badge {
-        display: block;
-        margin: 8px 8px;
-    }
-}
-        .content-wrapper {
-            position: relative;
-            z-index: 1;
-            text-align: center; /* Ensure content inside is centered */
         }
 
         .gradient-text {
@@ -166,25 +180,21 @@
             background-clip: text;
         }
 
-        .card-title {
-            color: #4834d4;
-        }
+        @media (max-width: 768px) {
+            .display-1 {
+                font-size: 3rem;
+            }
+            
+            .platform-badge {
+                font-size: 1.2rem;
+                padding: 8px 16px;
+                display: block;
+                margin: 8px auto;
+            }
 
-        .card-text {
-            color: #2c3e50;
-        }
-
-        .btn-custom {
-            background: linear-gradient(135deg, #4834d4, #686de0);
-            border: none;
-            color: white;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .btn-custom:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(72, 52, 212, 0.3);
-            color: white;
+            .league-scroller img {
+                height: 70px;
+            }
         }
     </style>
 </head>
@@ -192,89 +202,90 @@
     <div class="background-accent accent-1"></div>
     <div class="background-accent accent-2"></div>
 
-    <!-- Soccer Balls with increased number -->
     <div class="soccer-ball"></div>
     <div class="soccer-ball" style="animation-delay: -5s;"></div>
     <div class="soccer-ball" style="animation-delay: -10s;"></div>
     <div class="soccer-ball" style="animation-delay: -15s;"></div>
-    <div class="soccer-ball" style="animation-delay: -20s;"></div>
-    <div class="soccer-ball" style="animation-delay: -25s;"></div>
-    <div class="soccer-ball" style="animation-delay: -30s;"></div>
 
-    <div class="container pt-5 content-wrapper">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <h1 class="display-2 mb-4 floating gradient-text">
-                    ⚽ WhataGoal
-                </h1>
-                <p class="lead text-dark mb-5">Your AI-powered football statistics assistant. Get instant insights, predictions, and analysis.</p>
-            </div>
-        </div>
-
-        <div class="row justify-content-center mb-5">
-            <div class="col-auto">
-                <span class="platform-badge">
-                    <i class="fas fa-globe"></i> Web Platform
-                </span>
-            </div>
-            <div class="col-auto">
-                <span class="platform-badge">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Assistant
-                </span>
-            </div>
-        </div>
-
-           <div class="row justify-content-center g-4">
-            <div class="col-md-4">
-                <div class="card stat-card h-100">
-                    <div class="card-body">
-                        <h3 class="card-title">Live Stats</h3>
-                        <ul class="feature-list">
-                            <li>Real-time match statistics</li>
-                            <li>Player performance tracking</li>
-                            <li>Team analytics dashboard</li>
-                            <li>Live score updates</li>
-                        </ul>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h1 class="display-1 mb-4 floating gradient-text">
+                        <img src = "logo.png"></img> WhataGoal
+                    </h1>
+                    <p class="lead text-dark mb-5">Your AI-powered football statistics assistant. Get instant insights, predictions, and analysis.</p>
+                
+                    <div class="platform-badges mb-5">
+                        <span class="platform-badge">
+                            <i class="fas fa-globe"></i> Web Platform
+                        </span>
+                        <span class="platform-badge">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Assistant
+                        </span>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card stat-card h-100">
-                    <div class="card-body">
-                        <h3 class="card-title">Predictions</h3>
-                        <ul class="feature-list">
-                            <li>AI-powered match predictions</li>
-                            <li>Performance forecasting</li>
-                            <li>Trend analysis</li>
-                            <li>Historical pattern matching</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card stat-card h-100">
-                    <div class="card-body">
-                        <h3 class="card-title">Historical Data</h3>
-                        <ul class="feature-list">
-                            <li>Comprehensive match database</li>
-                            <li>Player statistics archive</li>
-                            <li>Team performance records</li>
-                            <li>Season-by-season analysis</li>
-                        </ul>
+
+                    <div class="league-scroller">
+                        <img src="premier-league-logo.png" alt="Premier League" class="league-logo">
+                        <img src="la-liga-logo.png" alt="La Liga" class="league-logo">
+                        <img src="serie-a-logo.png" alt="Serie A" class="league-logo">
+                        <img src="bundesliga-logo.png" alt="Bundesliga" class="league-logo">
+                        <img src="ligue-1-logo.png" alt="Ligue 1" class="league-logo">
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="row mt-5">
-            <div class="col text-center">
-                <button class="btn btn-custom btn-lg px-5 floating">Get Started</button>
+    <!-- Features Section -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="row justify-content-center g-4">
+                <div class="col-md-4">
+                    <div class="card stat-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Live Stats</h3>
+                            <ul class="feature-list">
+                                <li>Real-time match statistics</li>
+                                <li>Player performance tracking</li>
+                                <li>Team analytics dashboard</li>
+                                <li>Live score updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card stat-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Predictions</h3>
+                            <ul class="feature-list">
+                                <li>AI-powered match predictions</li>
+                                <li>Performance forecasting</li>
+                                <li>Trend analysis</li>
+                                <li>Historical pattern matching</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card stat-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Historical Data</h3>
+                            <ul class="feature-list">
+                                <li>Comprehensive match database</li>
+                                <li>Player statistics archive</li>
+                                <li>Team performance records</li>
+                                <li>Season-by-season analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 </body>
 </html>
-
