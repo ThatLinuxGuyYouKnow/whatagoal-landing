@@ -179,7 +179,75 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        
+  .league-scroll-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+            margin-top: 2rem;
+        }
 
+        .league-scroll-track {
+            display: flex;
+            width: fit-content;
+            animation: scroll 20s linear infinite;
+        }
+
+        .league-scroll-track:hover {
+            animation-play-state: paused;
+        }
+
+        .league-logo-group {
+            display: flex;
+            gap: 20px;
+            padding: 0 10px;
+        }
+
+        .league-logo {
+            height: 100px;
+            width: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .league-logo:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .league-logo {
+                height: 70px;
+            }
+        }
+
+        .title-logo {
+            height: 4.5rem;
+            width: auto;
+            vertical-align: middle;
+            margin-right: 1rem;
+            transform-origin: center;
+        }
+
+        @media (max-width: 768px) {
+            .title-logo {
+                height: 3rem;
+            }
+        }
+/* Adjust logo size on mobile */
+@media (max-width: 768px) {
+    .title-logo {
+        height: 3rem;  /* Match the smaller mobile font size */
+    }
+}
         @media (max-width: 768px) {
             .display-1 {
                 font-size: 3rem;
@@ -212,9 +280,10 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
-                    <h1 class="display-1 mb-4 floating gradient-text">
-                        <img src = "logo.png"></img> WhataGoal
-                    </h1>
+               <h1 class="display-1 mb-4 floating gradient-text">
+    <img src="logo.png" alt="WhataGoal" class="title-logo">
+    WhataGoal
+</h1>
                     <p class="lead text-dark mb-5">Your AI-powered football statistics assistant. Get instant insights, predictions, and analysis.</p>
                 
                     <div class="platform-badges mb-5">
@@ -226,13 +295,29 @@
                         </span>
                     </div>
 
-                    <div class="league-scroller">
-                        <img src="premier-league-logo.png" alt="Premier League" class="league-logo">
-                        <img src="la-liga-logo.png" alt="La Liga" class="league-logo">
-                        <img src="serie-a-logo.png" alt="Serie A" class="league-logo">
-                        <img src="bundesliga-logo.png" alt="Bundesliga" class="league-logo">
-                        <img src="ligue-1-logo.png" alt="Ligue 1" class="league-logo">
-                    </div>
+             <div class="league-scroll-container">
+        <div class="league-scroll-track">
+            <!-- First group of logos -->
+            <div class="league-logo-group">
+                <img src="premier.jpg" alt="Premier League" class="league-logo">
+                <img src="laliga.png" alt="La Liga" class="league-logo">
+                <img src="seria.png" alt="Serie A" class="league-logo">
+                <img src="bundesliga.png" alt="Bundesliga" class="league-logo">
+                <img src="ligue1.png" alt="Ligue 1" class="league-logo">
+                <img src="mls.png" alt="mls" class="league-logo">
+            </div>
+            <!-- Duplicate group for seamless loop -->
+            <div class="league-logo-group">
+                <img src="premier.jpg" alt="Premier League" class="league-logo">
+                <img src="laliga.png" alt="La Liga" class="league-logo">
+                <img src="seria.png" alt="Serie A" class="league-logo">
+                <img src="bundesliga.png" alt="Bundesliga" class="league-logo">
+                <img src="ligue1.png" alt="Ligue 1" class="league-logo">
+                <img src="mls.png" alt="mls" class="league-logo">
+            </div>
+        </div>
+    </div>
+
                 </div>
             </div>
         </div>
