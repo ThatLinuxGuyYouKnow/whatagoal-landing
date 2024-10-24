@@ -69,22 +69,67 @@
             100% { transform: scale(1); }
         }
 
-        .stat-card {height:40px
-            background: rgba(255, 255, 255, 0.7);
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1) !important;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(104, 109, 224, 0.2);
-            box-shadow: 0 4px 6px rgba(72, 52, 212, 0.1);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(104, 109, 224, 0.8);
+            box-shadow: 0 4px 6px rgba(72, 52, 212, 0.4);
+            transition: all 0.3s ease;
             position: relative;
             z-index: 1;
+            min-height: 150px; /* Instead of fixed height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-card .card-body {
+            width: 100%;
         }
 
         .stat-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.1) !important;
         }
 
-        .platform-badge {
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .stat-card {
+                margin-bottom: 20px;
+            }
+        }
+        @media (min-width: 769px) {
+    .stat-card {
+        min-height: 300px;
+    }
+}
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+    text-align: left;
+    font-size: 1rem; /* Ensure font consistency */
+    line-height: 1.6; /* Add line height for readability */
+}
+
+.feature-list li {
+    padding-left: 1.5rem; /* Add padding to align text with icons */
+    position: relative;
+    margin-bottom: 0.5rem; /* Add space between items */
+    font-family: inherit; /* Ensure it inherits the font-family */
+}
+
+.feature-list li:before {
+    content: "⚽";
+    position: absolute;
+    left: 0;
+    top: 0.1rem; /* Adjust vertical alignment */
+    font-size: 1rem; /* Ensure icon is same size as text */
+    color: #4834d4; /* Match the color with the rest of the theme */
+}
+
+ .platform-badge {
             background: rgba(104, 109, 224, 0.1);
             backdrop-filter: blur(5px);
             border: 1px solid rgba(104, 109, 224, 0.2);
@@ -99,13 +144,13 @@
         }
 @media (max-width: 768px) {
     .col-auto {
-        width: 100%;
-        margin-bottom: 20px;
+        width: 80%;
+        margin-bottom: 10px;
     }
     
     .platform-badge {
         display: block;
-        margin: 10px auto;
+        margin: 8px 8px;
     }
 }
         .content-wrapper {
@@ -179,28 +224,43 @@
             </div>
         </div>
 
-        <div class="row justify-content-center g-4">
+           <div class="row justify-content-center g-4">
             <div class="col-md-4">
                 <div class="card stat-card h-100">
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <h3 class="card-title">Live Stats</h3>
-                        <p class="card-text">Real-time match statistics, player performance, and team analytics</p>
+                        <ul class="feature-list">
+                            <li>Real-time match statistics</li>
+                            <li>Player performance tracking</li>
+                            <li>Team analytics dashboard</li>
+                            <li>Live score updates</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card stat-card h-100">
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <h3 class="card-title">Predictions</h3>
-                        <p class="card-text">AI-powered match predictions and performance forecasts</p>
+                        <ul class="feature-list">
+                            <li>AI-powered match predictions</li>
+                            <li>Performance forecasting</li>
+                            <li>Trend analysis</li>
+                            <li>Historical pattern matching</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card stat-card h-100">
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <h3 class="card-title">Historical Data</h3>
-                        <p class="card-text">Comprehensive database of past matches, player stats, and team records</p>
+                        <ul class="feature-list">
+                            <li>Comprehensive match database</li>
+                            <li>Player statistics archive</li>
+                            <li>Team performance records</li>
+                            <li>Season-by-season analysis</li>
+                        </ul>
                     </div>
                 </div>
             </div>
