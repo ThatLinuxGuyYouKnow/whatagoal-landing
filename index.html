@@ -6,7 +6,7 @@
     <title>WhataGoal - Football Stats Assistant</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
+           body {
             background: #ffffff;
             overflow-x: hidden;
             margin: 0;
@@ -14,6 +14,7 @@
         }
 
         .hero-section {
+            padding-top: 15rem; /* Increased padding for more space */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -23,6 +24,36 @@
             padding: 2rem 0;
         }
 
+        .display-1 {
+            font-size: 4.5rem;
+            text-align: center; /* Center the text */
+            font-weight: bold;  /* Bolden the text */
+        }
+
+        .title-logo {
+            height: 4.5rem;
+            width: auto;
+            vertical-align: middle;
+            margin-right: 1rem;
+            transform-origin: center;
+            float: left; /* Keep the logo left-biased */
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding-top: 3rem; /* Adjust padding for smaller screens */
+                min-height: 75vh;
+            }
+
+            .display-1 {
+                font-size: 3rem;
+            }
+
+            .title-logo {
+                height: 3rem;  /* Adjust logo size for smaller screens */
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-section {
                 min-height: 75vh;
@@ -30,6 +61,8 @@
         }
 
         .league-scroller {
+      
+         border-radius:20px; 
             display: flex;
             overflow-x: auto;
             gap: 20px;
@@ -180,18 +213,32 @@
             background-clip: text;
         }
         
-  .league-scroll-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            padding: 20px 0;
-            margin-top: 2rem;
-        }
+.league-scroll-container {
+    background: rgba(104, 109, 224, 0.2);
+    border-radius: 20px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 40px 0;
+    margin-top: 2rem;
+}
 
+@media (min-width: 768px) {
+    .league-scroll-container {
+        margin-top: 6rem;  /* Doubles the margin on larger screens */
+    }
+}
+
+/* If you want even more space on very large screens */
+@media (min-width: 1200px) {
+    .league-scroll-container {
+        margin-top: 8rem;  /* Triple the margin on extra-large screens */
+    }
+}
         .league-scroll-track {
             display: flex;
             width: fit-content;
-            animation: scroll 20s linear infinite;
+            animation: scroll 30s linear infinite;
         }
 
         .league-scroll-track:hover {
@@ -276,16 +323,21 @@
     <div class="soccer-ball" style="animation-delay: -15s;"></div>
 
     <!-- Hero Section -->
+    <div class="navbar">
+    <a> Features </a>
+    <a> Pricing</a>
+    <a> Terms </a>
+    </div>
     <section class="hero-section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
-               <h1 class="display-1 mb-4 floating gradient-text">
-    <img src="logo.png" alt="WhataGoal" class="title-logo">
-    WhataGoal
-</h1>
+                    <h1 class="display-1 mb-4 floating gradient-text">
+                        <img src="logo.png" alt="WhataGoal" class="title-logo">
+                        WhataGoal
+                    </h1>
                     <p class="lead text-dark mb-5">Your AI-powered football statistics assistant. Get instant insights, predictions, and analysis.</p>
-                
+
                     <div class="platform-badges mb-5">
                         <span class="platform-badge">
                             <i class="fas fa-globe"></i> Web Platform
@@ -295,28 +347,27 @@
                         </span>
                     </div>
 
-             <div class="league-scroll-container">
-        <div class="league-scroll-track">
-            <!-- First group of logos -->
-            <div class="league-logo-group">
-                <img src="premier.jpg" alt="Premier League" class="league-logo">
-                <img src="laliga.png" alt="La Liga" class="league-logo">
-                <img src="seria.png" alt="Serie A" class="league-logo">
-                <img src="bundesliga.png" alt="Bundesliga" class="league-logo">
-                <img src="ligue1.png" alt="Ligue 1" class="league-logo">
-                <img src="mls.png" alt="mls" class="league-logo">
-            </div>
-            <!-- Duplicate group for seamless loop -->
-            <div class="league-logo-group">
-                <img src="premier.jpg" alt="Premier League" class="league-logo">
-                <img src="laliga.png" alt="La Liga" class="league-logo">
-                <img src="seria.png" alt="Serie A" class="league-logo">
-                <img src="bundesliga.png" alt="Bundesliga" class="league-logo">
-                <img src="ligue1.png" alt="Ligue 1" class="league-logo">
-                <img src="mls.png" alt="mls" class="league-logo">
-            </div>
-        </div>
-    </div>
+                    <div class="league-scroll-container">
+                        <div class="league-scroll-track">
+                            <div class="league-logo-group">
+                                <img src="premier.png" alt="Premier League" class="league-logo">
+                                <img src="laliga.png" alt="La Liga" class="league-logo">
+                                <img src="seria.png" alt="Serie A" class="league-logo">
+                                <img src="bundesliga.png" alt="Bundesliga" class="league-logo">
+                                <img src="ligue1.png" alt="Ligue 1" class="league-logo">
+                                <img src="mls.png" alt="MLS" class="league-logo">
+                                <img src="saudi.svg" alt="SPL" class="league-logo">
+                                
+                                  <img src="premier.png" alt="Premier League" class="league-logo">
+                                <img src="laliga.png" alt="La Liga" class="league-logo">
+                                <img src="seria.png" alt="Serie A" class="league-logo">
+                                <img src="bundesliga.png" alt="Bundesliga" class="league-logo">
+                                <img src="ligue1.png" alt="Ligue 1" class="league-logo">
+                                <img src="mls.png" alt="MLS" class="league-logo">
+                                <img src="saudi.svg" alt="SPL" class="league-logo">
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
