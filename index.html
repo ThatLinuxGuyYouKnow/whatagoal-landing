@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhataGoal - Football Stats Assistant</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-           body {
+        body {
             background: #ffffff;
             overflow-x: hidden;
             margin: 0;
@@ -14,7 +15,8 @@
         }
 
         .hero-section {
-            padding-top: 15rem; /* Increased padding for more space */
+            padding-top: 15rem;
+            /* Increased padding for more space */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -26,8 +28,10 @@
 
         .display-1 {
             font-size: 4.5rem;
-            text-align: center; /* Center the text */
-            font-weight: bold;  /* Bolden the text */
+            text-align: center;
+            /* Center the text */
+            font-weight: bold;
+            /* Bolden the text */
         }
 
         .title-logo {
@@ -36,12 +40,14 @@
             vertical-align: middle;
             margin-right: 1rem;
             transform-origin: center;
-            float: left; /* Keep the logo left-biased */
+            float: left;
+            /* Keep the logo left-biased */
         }
 
         @media (max-width: 768px) {
             .hero-section {
-                padding-top: 3rem; /* Adjust padding for smaller screens */
+                padding-top: 3rem;
+                /* Adjust padding for smaller screens */
                 min-height: 75vh;
             }
 
@@ -50,7 +56,8 @@
             }
 
             .title-logo {
-                height: 3rem;  /* Adjust logo size for smaller screens */
+                height: 3rem;
+                /* Adjust logo size for smaller screens */
             }
         }
 
@@ -61,8 +68,8 @@
         }
 
         .league-scroller {
-      
-         border-radius:20px; 
+
+            border-radius: 20px;
             display: flex;
             overflow-x: auto;
             gap: 20px;
@@ -112,13 +119,21 @@
         .floating {
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
-        
+
         .soccer-ball {
             position: fixed;
             width: 70px;
@@ -130,8 +145,13 @@
         }
 
         @keyframes move {
-            0% { transform: translate(-100px, 0) rotate(0deg); }
-            100% { transform: translate(calc(100vw + 100px), 100vh) rotate(360deg); }
+            0% {
+                transform: translate(-100px, 0) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(calc(100vw + 100px), 100vh) rotate(360deg);
+            }
         }
 
         .background-accent {
@@ -162,9 +182,17 @@
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         .stat-card {
@@ -212,29 +240,32 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
-.league-scroll-container {
-    background: rgba(104, 109, 224, 0.2);
-    border-radius: 20px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 40px 0;
-    margin-top: 2rem;
-}
 
-@media (min-width: 768px) {
-    .league-scroll-container {
-        margin-top: 6rem;  /* Doubles the margin on larger screens */
-    }
-}
+        .league-scroll-container {
+            background: rgba(104, 109, 224, 0.1);
+            border-radius: 20px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 40px 0;
+            margin-top: 2rem;
+        }
 
-/* If you want even more space on very large screens */
-@media (min-width: 1200px) {
-    .league-scroll-container {
-        margin-top: 8rem;  /* Triple the margin on extra-large screens */
-    }
-}
+        @media (min-width: 768px) {
+            .league-scroll-container {
+                margin-top: 6rem;
+                /* Doubles the margin on larger screens */
+            }
+        }
+
+        /* If you want even more space on very large screens */
+        @media (min-width: 1200px) {
+            .league-scroll-container {
+                margin-top: 8rem;
+                /* Triple the margin on extra-large screens */
+            }
+        }
+
         .league-scroll-track {
             display: flex;
             width: fit-content;
@@ -265,6 +296,7 @@
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(-50%);
             }
@@ -289,17 +321,20 @@
                 height: 3rem;
             }
         }
-/* Adjust logo size on mobile */
-@media (max-width: 768px) {
-    .title-logo {
-        height: 3rem;  /* Match the smaller mobile font size */
-    }
-}
+
+        /* Adjust logo size on mobile */
+        @media (max-width: 768px) {
+            .title-logo {
+                height: 3rem;
+                /* Match the smaller mobile font size */
+            }
+        }
+
         @media (max-width: 768px) {
             .display-1 {
                 font-size: 3rem;
             }
-            
+
             .platform-badge {
                 font-size: 1.2rem;
                 padding: 8px 16px;
@@ -311,8 +346,72 @@
                 height: 70px;
             }
         }
+
+        .navbar {
+            background: rgba(104, 109, 224, 0.2);
+            border-radius: 20px;
+            width: 30%;
+            display: flex;
+            /* Use flexbox for alignment */
+            justify-content: space-between;
+            /* Evenly space items */
+            align-items: center;
+            /* Center items vertically */
+            overflow: hidden;
+            position: relative;
+            padding: 20px 40px;
+            /* Adjusted padding */
+            margin-top: 2rem;
+        }
+
+        .navbar-text {
+            font-size: 1.25rem;
+            /* More reasonable font size */
+            font-weight: bold;
+            color: #4834d4;
+            /* Match your theme color */
+            text-decoration: none;
+            /* Remove underline from links */
+            transition: color 0.3s ease, transform 0.3s ease;
+            padding: 8px 16px;
+            /* Add padding around text */
+        }
+
+        .navbar-text:hover {
+            color: #686de0;
+            /* Lighter color on hover */
+            transform: scale(1.05);
+            /* Slight scale effect on hover */
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 0 2rem;
+            /* Add some padding from screen edges */
+        }
+
+
+        /* Make it responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                width: 90%;
+                /* Fuller width on mobile */
+                padding: 15px 20px;
+                /* Smaller padding on mobile */
+            }
+
+            .navbar-text {
+                font-size: 1rem;
+                /* Smaller font on mobile */
+                padding: 6px 12px;
+                /* Smaller padding on mobile */
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="background-accent accent-1"></div>
     <div class="background-accent accent-2"></div>
@@ -323,10 +422,12 @@
     <div class="soccer-ball" style="animation-delay: -15s;"></div>
 
     <!-- Hero Section -->
-    <div class="navbar">
-    <a> Features </a>
-    <a> Pricing</a>
-    <a> Terms </a>
+    <div class="header-container">
+        <nav class="navbar">
+            <a href="#features" class="navbar-text">Features</a>
+            <a href="#pricing" class="navbar-text">Pricing</a>
+            <a href="#terms" class="navbar-text">Terms</a>
+        </nav>
     </div>
     <section class="hero-section">
         <div class="container">
@@ -336,7 +437,8 @@
                         <img src="logo.png" alt="WhataGoal" class="title-logo">
                         WhataGoal
                     </h1>
-                    <p class="lead text-dark mb-5">Your AI-powered football statistics assistant. Get instant insights, predictions, and analysis.</p>
+                    <p class="lead text-dark mb-5">Your AI-powered football statistics assistant. Get instant insights,
+                        predictions, and analysis.</p>
 
                     <div class="platform-badges mb-5">
                         <span class="platform-badge">
@@ -357,8 +459,8 @@
                                 <img src="ligue1.png" alt="Ligue 1" class="league-logo">
                                 <img src="mls.png" alt="MLS" class="league-logo">
                                 <img src="saudi.svg" alt="SPL" class="league-logo">
-                                
-                                  <img src="premier.png" alt="Premier League" class="league-logo">
+
+                                <img src="premier.png" alt="Premier League" class="league-logo">
                                 <img src="laliga.png" alt="La Liga" class="league-logo">
                                 <img src="seria.png" alt="Serie A" class="league-logo">
                                 <img src="bundesliga.png" alt="Bundesliga" class="league-logo">
@@ -424,4 +526,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 </body>
+
 </html>
