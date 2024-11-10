@@ -112,6 +112,7 @@
         }
 
         .feature-section {
+            height: 100%;
             padding: 4rem 0;
             background: #f8f9fa;
         }
@@ -204,6 +205,7 @@
             position: relative;
             z-index: 1;
             min-height: 150px;
+            min-height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -347,6 +349,22 @@
             }
         }
 
+        .section-title {
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .section-title h2 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #4834d4, #686de0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
         .navbar {
             background: rgba(104, 109, 224, 0.1);
             border-radius: 20px;
@@ -435,7 +453,7 @@
                 <div class="col-md-8 text-center">
                     <h1 class="display-1 mb-4 floating gradient-text">
                         <img src="logo.png" alt="WhataGoal" class="title-logo">
-                        WhataGoal
+                        WhataGoal!
                     </h1>
                     <p class="lead text-dark mb-5">Your AI-powered football statistics assistant. Get instant insights,
                         predictions, and analysis.</p>
@@ -478,6 +496,9 @@
 
     <!-- Features Section -->
     <section class="feature-section">
+        <div class="section-title">
+            <h2>Features</h2>
+        </div>
         <div class="container">
             <div class="row justify-content-center g-4">
                 <div class="col-md-4">
