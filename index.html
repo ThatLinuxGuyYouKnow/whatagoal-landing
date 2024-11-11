@@ -12,6 +12,7 @@
             overflow-x: hidden;
             margin: 0;
             padding: 0;
+            font-family: sans-serif
         }
 
         .hero-section {
@@ -196,37 +197,67 @@
             }
         }
 
-        .stat-card {
-            background: rgba(255, 255, 255, 0.1) !important;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(104, 109, 224, 0.8);
-            box-shadow: 0 4px 6px rgba(72, 52, 212, 0.4);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-            min-height: 150px;
-            min-height: 300px;
-            display: flex;
-            align-items: left;
-            justify-content: left;
+        /* Features Section */
+        .feature-section {
+            height: 100%;
+            padding: 4rem 0;
+            background: #f8f9fa;
         }
 
+        .section-title {
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .section-title h2 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #4834d4, #686de0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        /* Glass-morphic stat cards */
+        .glass-morphic {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(104, 109, 224, 0.8);
+            box-shadow: 0 4px 8px rgba(72, 52, 212, 0.4);
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .glass-morphic:hover {
+            box-shadow: 0 6px 12px rgba(72, 52, 212, 0.6);
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: transparent;
+            background: linear-gradient(135deg, #4834d4, #686de0);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        /* Feature List Styling */
         .feature-list {
             list-style: none;
             padding-left: 0;
             margin-top: 1rem;
-            text-align: center;
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             line-height: 1.6;
         }
 
         .feature-list li {
-            padding-left: 0;
-            position: relative;
             margin-bottom: 0.5rem;
-            font-family: inherit;
-            display: inline-block;
-            text-align: left;
+            display: flex;
+            align-items: center;
         }
 
         .feature-list li:before {
@@ -235,6 +266,7 @@
             font-size: 1rem;
             color: #4834d4;
         }
+
 
         .gradient-text {
             background: linear-gradient(135deg, #4834d4, #686de0);
@@ -349,21 +381,6 @@
             }
         }
 
-        .section-title {
-            text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-        }
-
-        .section-title h2 {
-            font-size: 3.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #4834d4, #686de0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: inline-block;
-        }
 
         .navbar {
             background: rgba(104, 109, 224, 0.1);
