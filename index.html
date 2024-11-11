@@ -207,18 +207,39 @@
 
         /* Features Section */
         .feature-section {
-            height: 100%;
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-
-        .section-title {
             text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
+            padding: 3rem 0;
+            /* Reduced padding for a tighter layout */
         }
 
         .section-title h2 {
+            text-align: center;
+            font-size: 3.2rem;
+            /* Slightly smaller for balance */
+            font-weight: bold;
+            background: linear-gradient(135deg, #4834d4, #686de0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.2rem;
+            /* Reduce space between title and subtitle */
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.8rem;
+            /* Adjust font size for visual balance */
+            color: #6c757d;
+            /* Subtle gray for subtitle text */
+            font-weight: 400;
+            margin-top: 0;
+            /* Remove top margin */
+            margin-bottom: 2rem;
+            /* Adjust as needed */
+            padding-bottom: 1rem;
+        }
+
+        .section-title h2 {
+            text-align: center;
             font-size: 3.5rem;
             font-weight: bold;
             background: linear-gradient(135deg, #4834d4, #686de0);
@@ -226,6 +247,17 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: inline-block;
+        }
+
+        .pricing-section {
+            padding-top: 180px;
+            text-align: center;
+        }
+
+        @media (max-height: 768px) {
+            .pricing-section {
+                padding-top: 90px;
+            }
         }
 
         /* Glass-morphic stat cards */
@@ -281,6 +313,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            padding-left: 0.5;
         }
 
         .league-scroll-container {
@@ -351,12 +384,15 @@
         }
 
         .title-logo {
-            height: 8rem;
+            height: 7rem;
             width: auto;
             vertical-align: middle;
-            margin-right: 1rem;
+            margin-right: 0;
+            /* or 0.1rem for slight spacing */
             transform-origin: center;
+            float: left;
         }
+
 
         @media (max-width: 768px) {
             .title-logo {
@@ -476,10 +512,13 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
-                    <h1 class="display-1 mb-4 floating gradient-text main-text">
-                        <img src="logo.png" alt="WhataGoal" class="title-logo">
-                        WhataGoal!
-                    </h1>
+                    <div>
+                        <h4 class="display-1 mb-4 gradient-text main-text">
+                            <img src="logo.png" alt="WhataGoal" class="title-logo">
+                            WhataGoal!
+                        </h4>
+                    </div>
+
                     <p class="lead text-dark mb-5">Your AI-powered football statistics assistant. Get instant insights,
                         predictions, and analysis.</p>
 
@@ -521,9 +560,10 @@
 
     <!-- Features Section -->
     <section class="feature-section">
-        <div class="section-title">
+        <div class="section-title ">
             <h2>Features</h2>
         </div>
+        <div class="section-subtitle"> We do it all</div>
         <div class="container">
             <div class="row justify-content-center g-4">
                 <div class="col-md-4">
@@ -568,12 +608,11 @@
             </div>
         </div>
     </section>
-    <section>
-        <div>
-            <h2 class="section-title">
-                Pricing
-            </h2>
+    <section class="pricing-section">
+        <div class="section-title pricing-header">
+            <h2>Pricing</h2>
         </div>
+        <div class="section-subtitle"> Pick the one thats best for you</div>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
