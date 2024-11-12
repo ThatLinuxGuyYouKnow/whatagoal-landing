@@ -266,9 +266,14 @@
 
         .pricing-card {
             border-radius: 12px;
-            border: #4834d4;
-
+            border: 2px solid #4834d4;
+            /* Set the border width, style, and color */
+            padding: 20px;
+            /* Optional padding for a more spaced-out look */
+            margin: 10px;
+            /* Optional margin between cards */
         }
+
 
         /* Glass-morphic stat cards */
         .glass-morphic {
@@ -622,11 +627,27 @@
         <div class="section-title pricing-header">
             <h2>Pricing</h2>
         </div>
-        <div class="section-subtitle"> Simple Pricing. No story</div>
+        <div class="section-subtitle">Simple Pricing. No story</div>
 
         <div class="row pricing-cards-div">
-            <div class="pricing-card card"></div>
+            <div class="col-md-4">
+                <div class="pricing-card card">
+                    <div class="card-title">Supporter</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pricing-card card">
+                    <div class="card-title">Die-Hard</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pricing-card card">
+                    <div class="card-title">Ultra</div>
+                </div>
+            </div>
+        </div>
     </section>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
