@@ -292,12 +292,17 @@
         }
 
         .card-title {
+            text-align: left;
             font-size: 1.8rem;
             font-weight: bold;
             color: transparent;
             background: linear-gradient(135deg, #4834d4, #686de0);
             -webkit-background-clip: text;
             background-clip: text;
+        }
+
+        .separator-line {
+            color: #4834d4
         }
 
         /* Feature List Styling */
@@ -631,8 +636,12 @@
 
         <div class="row pricing-cards-div">
             <div class="col-md-4">
-                <div class="pricing-card card">
-                    <div class="card-title">Supporter</div>
+                <div class="pricing-card card"><img width="48" height="48" src="icons/supporter.png"
+                        alt="foam-fingers" />
+                    <div
+                        style="width: 95%; height: 2px; background: linear-gradient(135deg, #4834d4, #686de0); margin: 20px auto;">
+                    </div>
+                    <div class="card-title">Supporter </div>
                 </div>
             </div>
             <div class="col-md-4">
