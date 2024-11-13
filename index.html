@@ -267,8 +267,14 @@
             display: flex;
             flex-wrap: nowrap;
             justify-content: center;
+            /* Centers items horizontally within the flex container */
             gap: 30px;
+            max-width: 1200px;
+            /* Limits the maximum width to keep content centered */
+            margin: 0 auto;
+            /* Centers the container itself within the parent */
             padding: 50px 20px;
+            /* Use smaller padding for top/bottom spacing */
         }
 
 
@@ -290,7 +296,7 @@
         .pricing-card-focus {
             transform: scale(1.1);
             border: 2px solid #686de0;
-            background: linear-gradient(135deg, rgba(72, 52, 212, 0.1), rgba(104, 109, 224, 0.15));
+            background: white;
             box-shadow: 0px 10px 20px rgba(72, 52, 212, 0.2);
         }
 
