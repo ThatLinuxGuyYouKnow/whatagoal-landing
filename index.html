@@ -249,9 +249,12 @@
             display: inline-block;
         }
 
+        /* Main section */
         .pricing-section {
             padding-top: 180px;
             text-align: center;
+            background-color: #f8f9fa;
+            /* Soft background for contrast */
         }
 
         @media (max-height: 768px) {
@@ -260,30 +263,83 @@
             }
         }
 
+        /* Container for cards */
         .pricing-cards-div {
-            padding: 40px 40px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px 20px;
         }
 
-        .pricing-card {
-            width: 400px;
-            border-radius: 20px;
+        /* Individual card styling */
+        .pricing-card,
+        .pricing-card-focus {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 15px;
             border: 2px solid #4834d4;
-            /* Set the border width, style, and color */
-            padding: 20px;
-            /* Optional padding for a more spaced-out look */
-            margin: 10px;
-            /* Optional margin between cards */
+            padding: 30px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            /* Soft shadow for depth */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Smooth hover animation */
         }
 
         .pricing-card-focus {
-            width: 500px;
-            border-radius: 20px;
-            border: 2px solid #4834d4;
-            /* Set the border width, style, and color */
-            padding: 20px;
-            /* Optional padding for a more spaced-out look */
-            margin: 10px;
-            /* Optional margin between cards */
+            border-color: #686de0;
+            /* Emphasized color for focus card */
+        }
+
+        /* Hover effect for cards */
+        .pricing-card:hover,
+        .pricing-card-focus:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Title */
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: transparent;
+            background: linear-gradient(135deg, #4834d4, #686de0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        /* List styling */
+        .pricing-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .pricing-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .pricing-list li a {
+            color: #4834d4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .pricing-list li a:hover {
+            color: #686de0;
+        }
+
+        /* Divider line */
+        .divider {
+            width: 95%;
+            height: 2px;
+            background: linear-gradient(135deg, #4834d4, #686de0);
+            margin: 20px auto;
         }
 
 
@@ -339,6 +395,20 @@
             color: #4834d4;
         }
 
+        .pricing-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .pricing-list li a {
+            color: #4834d4;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
 
         .gradient-text {
             background: linear-gradient(135deg, #4834d4, #686de0);
@@ -647,36 +717,50 @@
         <div class="section-subtitle">Simple Pricing. No story</div>
 
         <div class="row pricing-cards-div">
+            <!-- Supporter Card -->
             <div class="col-md-4">
-                <div class="pricing-card card"><img width="48" height="48" src="icons/supporter.png"
-                        alt="foam-fingers" />
-                    <div
-                        style="width: 95%; height: 2px; background: linear-gradient(135deg, #4834d4, #686de0); margin: 20px auto;">
-                    </div>
-                    <div class="card-title">Supporter </div>
-                    <a> Goal Alerts</a>
-                    <a> 24/7 Stats Assistant access</a>
-                    <a>20 assistant chats per day</a>
+                <div class="pricing-card card">
+                    <img width="48" height="48" src="icons/supporter.png" alt="foam-fingers" />
+                    <div class="divider"></div>
+                    <div class="card-title">Supporter</div>
+                    <ul class="pricing-list">
+                        <li><a>Goal Alerts</a></li>
+                        <li><a>24/7 Stats Assistant access</a></li>
+                        <li><a>20 assistant chats per day</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="pricing-card-focus card"><img width="48" height="48" src="icons/super-fan.png"
-                        alt="foam-fingers" />
-                    <div
-                        style="width: 95%; height: 2px; background: linear-gradient(135deg, #4834d4, #686de0); margin: 20px auto;">
-                        <div class="card-title">Die-Hard</div>
-                    </div>
-                </div>
 
-            </div>
+            <!-- Die-Hard Card (Focus) -->
             <div class="col-md-4">
-                <div class="pricing-card card"><img width="48" height="48" src="icons/ultra.png" alt="foam-fingers" />
-                    <div
-                        style="width: 95%; height: 2px; background: linear-gradient(135deg, #4834d4, #686de0); margin: 20px auto;">
-                        <div class="card-title">Ultra</div>
-                    </div>
+                <div class="pricing-card-focus card">
+                    <img width="48" height="48" src="icons/super-fan.png" alt="foam-fingers" />
+                    <div class="divider"></div>
+                    <div class="card-title">Die-Hard</div>
+                    <ul class="pricing-list">
+                        <li><a>All Supporter features</a></li>
+                        <li><a>Unlimited chats</a></li>
+                        <li><a>Exclusive insights</a></li>
+                    </ul>
                 </div>
+            </div>
+
+            <!-- Ultra Card -->
+            <div class="col-md-4">
+                <div class="pricing-card card">
+                    <img width="48" height="48" src="icons/ultra.png" alt="foam-fingers" />
+                    <div class="divider"></div>
+                    <div class="card-title">Ultra</div>
+                    <ul class="pricing-list">
+                        <li><a>All Die-Hard features</a></li>
+                        <li><a>VIP stats sessions</a></li>
+                        <li><a>1:1 coaching access</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
