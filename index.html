@@ -263,13 +263,14 @@
             }
         }
 
-        /* Container for cards */
         .pricing-cards-div {
             display: flex;
+            flex-wrap: nowrap;
             justify-content: center;
             gap: 30px;
             padding: 50px 20px;
         }
+
 
         /* Individual card styling */
         .pricing-card,
@@ -285,17 +286,21 @@
             /* Smooth hover animation */
         }
 
+        /* Emphasize focus card with scale and gradient border */
         .pricing-card-focus {
-            border-color: #686de0;
-            /* Emphasized color for focus card */
+            transform: scale(1.1);
+            border: 2px solid #686de0;
+            background: linear-gradient(135deg, rgba(72, 52, 212, 0.1), rgba(104, 109, 224, 0.15));
+            box-shadow: 0px 10px 20px rgba(72, 52, 212, 0.2);
         }
 
-        /* Hover effect for cards */
+        /* Enhanced hover effect for all cards */
         .pricing-card:hover,
         .pricing-card-focus:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
         }
+
 
         /* Title */
         .card-title {
@@ -308,6 +313,15 @@
             text-align: left;
             margin-top: 15px;
         }
+
+        /* Emphasize focus card with scale and gradient border */
+        .pricing-card-focus {
+            transform: scale(1.1);
+            border: 2px solid #686de0;
+            background: linear-gradient(135deg, rgba(72, 52, 212, 0.1), rgba(104, 109, 224, 0.15));
+            box-shadow: 0px 10px 20px rgba(72, 52, 212, 0.2);
+        }
+
 
         /* List styling */
         .pricing-list {
